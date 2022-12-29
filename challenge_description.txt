@@ -1,0 +1,67 @@
+Python Programming Exercise
+
+Below is the programming task we would like you complete.
+
+Your task is to write some code/script to analyze a report that we get from our partners
+that lists various events that happen to units.
+
+An example file looks like:
+
+SHIP 123456789012347 ABC
+  123 screen
+  124 power
+RECV 123456789012347 XYZ
+   27 camera
+
+The format for each record is:
+<EVENT> <IMEI> <SKU>
+  <FAULT_CODE> <FAULT_DESCRIPTION>
+
+The 'EVENT' is either 'SHIP' or 'RECV'.  (NOTE:  SHIP = SEND)
+SHIP means that the partner shipped the unit out of their warehouse
+RECV means that the partner received the unit into their warehouse.
+
+- 'IMEI' is a unique identifier for the device
+  see: https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity for more information.
+
+  There should be a 15-digit IMEI and have a valid check digit (see check digit computation).
+
+  Records with invalid IMEIs should be reported, but otherwise ignored.
+
+- 'SKU' is a stock-keeping unit that identifies the make/model of the unit.
+   See https://en.wikipedia.org/wiki/Stock_keeping_unit
+  
+- 'FAULT CODE' is an integer code describing the fault the device has.
+- 'FAULT DESCRIPTION' is a string description the fault.
+
+1. Write a Python script that will take an input file and is able to parse the input file and report on the following:
+
+Provide the total number of devices that are currently at the partner, by SKU.
+
+Assume the events in the file represent all events that have ever occurred.
+E.g.:
+Inventory:
+ABC 1
+XYZ 50
+
+Provide a list of invalid records that are in the file including:
+why they are invalid.
+the record index.
+
+E.g.: Invalid records:  5 Invalid IMEI, 10 Invalid event
+
+Provide a list of all the “Fault Codes” and their “Faults”  
+
+Output what the mapping is.
+E.g.:
+Fault code mapping:
+ 123 screen
+ 124 power
+  27 camera
+
+The script can use any Python standard library.
+
+2. Design an SQL schema to store the data (i.e.: write the 'CREATE TABLE' DDL commands).
+
+Please send this back to us when you have time. I think you should allow a couple of hours.
+
