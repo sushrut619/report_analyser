@@ -1,0 +1,7 @@
+RECV 216454869549708 TVXU
+    124 power
+    77 usb
+
+RECV 001600247058676 CRJLUNSTW
+    18 bluetooth
+
