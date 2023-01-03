@@ -31,7 +31,7 @@ def parse_events(word_matrix) -> dict:
             if is_valid_event:
                 if event_type in ["SHIP", "SEND"]:
                     all_events["valid_events"][sku] -= 1
-                    all_events["valid_events"][sku] = min(0, all_events["valid_events"][sku])
+                    all_events["valid_events"][sku] = max(0, all_events["valid_events"][sku])
                 else:
                     all_events["valid_events"][sku] += 1
             

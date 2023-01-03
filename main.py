@@ -18,10 +18,12 @@ for fault in fault_codes:
     print(f"{fault.value} {fault.name}")
 
 processed_events = parse_events(word_matrix)
-print("processed event: ", processed_events)
+# print("processed event: ", processed_events)
 
 invalid_imei_count = len(processed_events["invalid_events"]["invalid_imei"])
 invalid_type_count = len(processed_events["invalid_events"]["invalid_type"])
 
-print(f"Invalid records:  {invalid_imei_count} Invalid IMEI, {invalid_type_count} Invalid event")
-
+print(f"\nInvalid records:  {invalid_imei_count} Invalid IMEI, {invalid_type_count} Invalid event\n")
+print("Inventory:")
+for sku, count in processed_events["valid_events"].items():
+    print(sku, " ", count)
